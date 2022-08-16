@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="src/assets/icon.png">
+    <link rel="stylesheet" href="src/css/all.min.css">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/scss/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="notification position-fixed left-0 w-100" style="z-index: 10001;top:84px"></div>
+        <!-- Start NavBar -->
+        <nav class="navbar navbar-expand-lg position-fixed top-0 left-0 w-100 header-nav p-0">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./src/assets/logo.png" alt="Lido" class="header-logo">
+                </a>
+                <button class="navbar-toggler btn btn-outline-danger text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"
+                    style="background-color:var(--main-color);color: #fff;box-shadow: unset;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 gap-2 rounded" style="background: #ffebed;">
+                        <li class="nav-item text-end me-3 rounded fw-bold" v-for="page in headerPages">
+                            <a :class=" page==activePage?'nav-link active rounded text-center':'nav-link rounded text-center'"
+                                :href="'#'+ page.toLowerCase()" :aria-current="page=='Home'?'page':''"
+                                @click="activePage=page">
+                                {{page}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="form-check form-switch ms-2 d-flex flex-column justify-content-center align-items-center d-lg-block d-none">
+                    <label class="form-check-label" for="flexSwitchCheckDefault"> Dark Mode</label>
+                    <input class="form-check-input darkModed" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                </div>
+            </div>
+        </nav>
+        <!-- End NavBar -->
+
+        <!-- Start Home -->
+        <section class="home-page section" id="home" style="height:100vh;">
+            <div class=" container d-flex justify-content-between h-100">
+                <div class="Content d-flex flex-column align-items-center gap-4 justify-content-center">
+                    <h1 style="text-decoration: underline var(--main-color) 3px dashed;">Welcome To My<span
+                            style="color: var(--main-color);"> Portfolio</span></h2>
+                        <div class="langs  translate-middle-x">
+                            <h3>
+                                Made With :
+                            </h3>
+                            <h5><i class="fa-regular fa-hand-point-right me-1"></i> HTML</h5>
+                            <h5><i class="fa-regular fa-hand-point-right me-1"></i> CSS | SASS | BOOTSTRAP</h5>
+                            <h5><i class="fa-regular fa-hand-point-right me-1"></i> JS | VUE | jQuery | Ajax</h5>
+                        </div>
+                        <ul class="list-unstyled d-flex gap-3">
+
+                            <li class="icon-con rounded p-1" style="background-color: #0bc608;">
+                                <a href="https://api.whatsapp.com/send/?phone=201061193251&text&type=phone_number&app_absent=0"
+                                    target="_blank">
+                                    <i class="fa-brands fa-whatsapp fa-fw fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="icon-con rounded p-1" style="background-color: #3b5998;">
+                                <a href="https://www.facebook.com/profile.php?id=100078655747238" target="_blank">
+                                    <i class="fa-brands fa-facebook-f fa-fw fa-2x">
+                                    </i>
+                                </a>
+                            </li>
+                            <li class="icon-con rounded p-1" style="background-color: #55acee;">
+                                <a href="https://twitter.com/khalida50851147" target="_blank">
+                                    <i class="fa-brands fa-twitter fa-fw fa-2x">
+                                    </i>
+                                </a>
+                            </li>
+                            <li class="icon-con rounded p-1" style="background-color: #3f729b;">
+                                <a href="https://www.instagram.com/khalid8walid/" target="_blank">
+                                    <i class="fa-brands fa-instagram fa-fw fa-2x">
+                                    </i>
+                                </a>
+                            </li>
+                            <li class="icon-con rounded p-1" style="background-color: #ff9933;">
+                                <a href="https://github.com/khalidwalidanwar" target="_blank">
+                                    <i class="fa-brands fa-github fa-fw fa-2x">
+                                    </i>
+                                </a>
+                            </li>
+                            <li class="icon-con rounded p-1" style="background-color: #24afea;">
+                                <a href="https://www.linkedin.com/in/khalid-anwar-294712220" target="_blank">
+                                    <i class="fa-brands fa-linkedin-in fa-fw fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="http://khalidlido.atwebpages.com//pp" target="_blank" class="btn btn-outline-danger"
+                            style="background-color: var(--main-color); color: #fff;">
+                            See More !</a>
+                </div>
+                <div class="imageContainer w-100 d-none d-lg-block  ">
+                    <img src="src/assets/imgs/Homeillls.svg" class="w-100 h-100" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- End Home -->
+
+        <!-- Start About -->
+        <section class="about-page section position-relative" id="about">
+            <div class="header container d-flex justify-content-center">
+                <div class="content px-3 py-2 rounded">
+                    <h2>{{headerPages[1]}}</h2>
+                </div>
+            </div>
+
+            <div class="container h-75 d-flex align-items-center justify-content-center">
+                <div class="gallery">
+
+                </div>
+                <div class="card mb-3" style="max-width: 800px;transform: translateX(100%);transition: 0.6s;">
+                    <div class="row g-0 flex-row-reverse">
+                        <div class="col-md-5 position-relative" style="max-height: 350px;overflow: hidden;">
+                            <img src="src/assets/profile.jpeg" class="img-fluid rounded-end" alt="...">
+                            <span class="badge position-absolute top-0 end-0 m-2 p-2"
+                                style="background: var(--main-color)">{{myAge}} Years</span>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title text-center myheaderName">Khalid Walid Anwar</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text" style="letter-spacing: 0.9px;">
+                                    Hello ! My name is <b>Khalid Walid Anwar</b>. <br>
+                                    I am {{myAge}} years old , I am interested in programing and i had started studing
+                                    many programing languages. <br>
+                                    I made many landing pages and i hope to work as a <b>FrontEnd Developer</b>. <br>
+                                </p>
+                                <p class="card-text"><span class="text-muted">My Skills : )</span></p>
+                                <div class="skills d-flex align-items-center flex-wrap">
+                                    <span class="badge bg-info p-2 me-2 mb-2 fw-bold">HTML</span>
+                                    <span class="badge bg-primary p-2 me-2 mb-2 fw-bold">CSS</span>
+                                    <span class="badge bg-secondary p-2 me-2 mb-2 fw-bold">SASS</span>
+                                    <span class="badge bg-warning p-2 me-2 mb-2 fw-bold text-dark">Bootstrap</span>
+                                    <span class="badge bg-danger p-2 me-2 mb-2 fw-bold">JavaScript</span>
+                                    <span class="badge bg-success p-2 me-2 mb-2 fw-bold">Ajax</span>
+                                    <span class="badge bg-info p-2 me-2 mb-2 fw-bold">Json</span>
+                                    <span class="badge bg-dark p-2 me-2 mb-2 fw-bold">jQuery</span>
+                                    <span class="badge bg-body p-2 me-2 mb-2 fw-bold">Vue</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End About -->
+
+        <!-- Start certifacate -->
+        <section class="certifications-page section" id="certifications">
+            <div class="header container d-flex justify-content-center">
+                <div class="content px-3 py-2 rounded">
+                    <h2>Our {{headerPages[2]}}</h2>
+                </div>
+            </div>
+            <div class="container mt-50px">
+                <div class="row mb-3 gap-md-0 gap-3">
+                    <div class="col-md-6 col-12 d-flex justify-content-around">
+                        <div class="img-container w-50 rounded">
+                            <img src="./src/assets/html.jpeg" class="img-fluid rounded " alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 d-flex justify-content-around">
+                        <div class="img-container w-50 rounded">
+                            <img src="./src/assets/css.jpeg" class="img-fluid rounded " alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 d-flex justify-content-around">
+                        <div class="img-container  w-25  rounded">
+                            <img src="./src/assets/fwd.jpeg" alt="" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3 gap-md-0 gap-3">
+                    <div class="col-md-6 col-12 d-flex justify-content-around">
+                        <div class="img-container w-50 rounded">
+                            <img src="./src/assets/python.jpeg" class="img-fluid rounded" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 d-flex justify-content-around">
+                        <div class="img-container w-50 rounded">
+                            <img src="./src/assets/js.jpeg" class="img-fluid rounded" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End certifacate -->
+
+        <!-- Start Skills -->
+        <section class="section skills-page" id="skills">
+            <div class="header container d-flex justify-content-center">
+                <div class="content px-3 py-2 rounded">
+                    <h2>Our {{headerPages[3]}}</h2>
+                </div>
+            </div>
+            <div class="container py-5 px-2 my-5 d-flex justify-content-between align-items-center flex-wrap ">
+                <div class="img-container" style="width: 49%;">
+                    <img src="./src/assets/imgs/skillsSvg.svg" alt="">
+                </div>
+                <div class="myskills p-1" dir="rtl" style="width: 49%;">
+                    <div class="skill mb-1" v-for="(prog,lang) in mySkills">
+                        <label class="badge bg-secondary p-2 mb-1  mt-2 me-1">{{lang}}</label>
+                        <div class="progress bg-secondary" style="height: 22px;">
+                            <div class="progress-bar progress-bar-animated fw-bold" role="progressbar"
+                                aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100"
+                                :style="'width:0;border-radius:3px;background-color: var(--main-color);transition:0.8s'">
+                                {{prog}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Skills -->
+
+        <!-- Start Projects -->
+        <section class="section projects-page" id="projects">
+            <div class="header container d-flex justify-content-center">
+                <div class="content px-3 py-2 rounded">
+                    <h2>Our {{headerPages[4]}}</h2>
+                </div>
+            </div>
+            <div class="container p-2 d-flex justify-content-around align-items-center gap-2 flex-wrap ">
+                <div class="card " v-for="i in [1,2,3,4]">
+                    <a href="#">
+                        <div class="card-body" style="background-color: var(--main-color);">
+                            <p class="card-text text-center text-white fw-bold">
+                                {{i==1?"Portfolio 1":i==2?"Landing1":i==3?"Landing 2":"Speed Game"}}
+                            </p>
+                        </div>
+                        <div class="img-container">
+                            <img :src="`./src/assets/prog${i}.png`" class="card-img-bottom" :alt="'Prog'+i">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- End Projects -->
+
+        <!-- Start Contact -->
+        <section class="section contact-page" id="contact us">
+            <div class="header container d-flex justify-content-center">
+                <div class="content px-3 py-2 rounded">
+                    <h2>{{headerPages[5]}}</h2>
+                </div>
+            </div>
+            <div class="container px-2">
+                <form class="row g-3 contact-form" @submit.prevent>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">First-Name :</label>
+                        <input type="text" v-model="fName" class="form-control" id="inputEmail4" autocomplete="url"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Last-Name :</label>
+                        <input type="text" v-model="lName" class="form-control" id="inputPassword4" autocomplete="url"
+                            required>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Email :</label>
+                        <input type="email" v-model="email" class="form-control" id="inputAddress" autocomplete="email"
+                            placeholder="example@gmail.com" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Phone Number :</label>
+                        <input type="number" v-model="phone" class="form-control" id="inputAddress" autocomplete="email"
+                            placeholder="( Optional )">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Massege :</label>
+                        <textarea class="form-control" v-model="massege" id="inputAddress"
+                            placeholder="Write your massege ..." style="resize: none;min-height: 120px;"
+                            required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary" @click="sendMail()">Send</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </section>
+        <!-- End Contact -->
+
+        <!-- Start Footer -->
+        <div class="footer bg-black c-white">
+            <div class="container">
+                <div class="row d-flex justify-content-between align-items-center flex-row-reverse ">
+                    <div class="col-12 " style="font-size: 14px;">
+                        <p class="text-white text-center m-0 py-3">
+                            Made With <i class="fa-solid fa-heart c-main" style="color: #0075ff;"></i> By Khalid Walid ©
+                            {{curentYear}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+        <div class="toTop badge position-fixed bg-danger text-white p-2 fs-5 bottom-0 end-0 m-2"
+            style="cursor: pointer;display: none;" @click="goToTop()">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
+    </div>
+
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/all.min.js"></script>
+    <script src="src/js/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="src/js/Vue/vue.js"></script>
+    <script type="module" src="src/js/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+</body>
+
+</html>
