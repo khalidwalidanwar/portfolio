@@ -1,0 +1,30 @@
+.home-page{
+    background: linear-gradient(-45deg, #ffd8dc, #ffdadd, #fff);
+    h5 svg{
+        color: var(--main-color);
+    }
+    .icon-con{
+        font-size: 13px;
+        svg{
+            color: #fff;
+        }
+    }
+}
+
+@media (min-width:990px){
+    .home-page{
+        .Content{
+            min-width: 489px;
+        }
+    }
+}
+@media (max-width:990px){
+    .home-page{
+        .langs {
+            transform: unset !important;
+        }
+        .container {
+            justify-content: center !important;
+        }
+    }
+}

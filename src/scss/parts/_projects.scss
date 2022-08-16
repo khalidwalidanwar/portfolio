@@ -1,0 +1,34 @@
+.projects-page{
+    background: linear-gradient(-45deg, #ffd8dc, #ffdadd, #fff);
+    .card{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 18rem;
+        border:none;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+        }
+        .card-body{
+            border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        }
+    }
+    .img-container{
+        border: 3px solid var(--main-color);
+        padding: 3px;
+        overflow: hidden;
+        max-width: 315px;
+        height: 200px;
+        position: relative;
+        img{
+            height: 100%;
+            width: 100%;
+            transition: 0.4s;
+        }
+        &:hover img,
+        &:hover::before{
+            transform: scale(1.1);
+        }
+    }
+}

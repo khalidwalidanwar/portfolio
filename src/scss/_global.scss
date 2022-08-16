@@ -1,0 +1,17 @@
+:root{
+    --main-color:#ec6659;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    // user-select: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+#app{
+    scroll-behavior: smooth;
+}
+img{
+    pointer-events: none;
+}
+@import './default';

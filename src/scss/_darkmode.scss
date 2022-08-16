@@ -1,0 +1,31 @@
+$mainDarkColor:#7d7d7d;
+.dark{
+    color: #fff !important;
+    background-color: $mainDarkColor;
+    .navbar{
+        color: #fff;
+        .navbar-nav{
+            background-color: #a5a5a5 !important;
+        }
+        .nav-link{
+            color: #fff;
+        }
+        .nav-link.active, .nav-link:hover{
+            color:  var(--main-color);
+            box-shadow:0 0.01rem 0.25rem #fff !important;
+            transition: 0.2s;
+        }
+    }
+    .home-page{
+        background-image: linear-gradient(-45deg, #696969, #7d7d7d, #313131);
+    }
+    .about-page .card{
+        color: $mainDarkColor;
+    }
+    .certifications-page{
+        background: linear-gradient(316deg, #696969, #7d7d7d, #313131);
+    }
+    .projects-page{
+        background: linear-gradient(316deg, #696969, #7d7d7d, #313131);
+    }
+}
